@@ -83,6 +83,11 @@ gcloud auth configure-docker
 gcloud docker -- pull gcr.io/static-shine-235605/1on1-admin-api:1.0.0
 ```
 
+4. Docker container running
+
+```bat
+docker run -p 8080:8080 --name 1on1-admin-api -d gcr.io/static-shine-235605/1on1-admin-api:1.0.0
+```
 
 ## Enter the docker container
 
@@ -97,3 +102,16 @@ docker exec -it {docker container name} bash
 ```bat
 docker exec -it {docker container name} ash
 ```
+
+
+## Reference 
+
+[Node.js Deployment](https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bddd11bf8953a896)
+
+[Node.js Deployment Video](https://www.youtube.com/watch?v=oykl1Ih9pMg&t=867s)
+
+[ubuntu 18 部署 Nginx](https://ithelp.ithome.com.tw/articles/10228765)
+
+[在 GCP 上建立 VM 架設 NIGNX Web server](https://titangene.github.io/article/gcp-vm-nignx-web-server.html)
+
+[整合 Container Registry](https://ithelp.ithome.com.tw/articles/10220807)
