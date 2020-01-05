@@ -83,7 +83,78 @@ gcloud auth configure-docker
 gcloud docker -- pull gcr.io/static-shine-235605/1on1-admin-api:1.0.0
 ```
 
-4. Docker container running
+## 設定nginx
+
+1. 安裝 nginx
+
+* 更新os
+
+```bat
+sudo apt-get update
+```
+
+* 安裝nginx
+
+```bat
+sudo apt-get install nginx -y
+```
+
+2. 確認nginx 狀態
+
+```bat
+ps auwx | grep nginx
+```
+
+3. nginx指向設定，修改設定檔
+
+```
+sudo vi /etc/nginx/sites-available/default
+```
+
+4. 修改設定如下：
+
+```default
+server_name yourdomain.com www.yourdomain.com;
+
+location / {
+    proxy_pass http://localhost:5000; #whatever port your app runs on
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+}
+```
+
+5. 確認nginx config
+
+```bat
+sudo nginx -t
+```
+
+6. Restart nginx
+
+```bat
+sudo service nginx restart
+```
+
+7. Stop nginx
+
+```bat
+service nginx stop
+```
+
+8. Start nginx
+
+```bat
+service nginx start
+```
+
+
+## 啟動docker 容器
+
+
+1. Docker container running
 
 ```bat
 docker run -p 8080:8080 --name 1on1-admin-api -d gcr.io/static-shine-235605/1on1-admin-api:1.0.0
