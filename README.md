@@ -186,3 +186,5 @@ docker exec -it {docker container name} ash
 [在 GCP 上建立 VM 架設 NIGNX Web server](https://titangene.github.io/article/gcp-vm-nignx-web-server.html)
 
 [整合 Container Registry](https://ithelp.ithome.com.tw/articles/10220807)
+
+[在 GCE 上架 Nginx](https://dainamlon.com/2018/11/18/nginx/)
