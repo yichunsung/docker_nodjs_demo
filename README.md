@@ -202,3 +202,5 @@ certbot renew --dry-run
 [整合 Container Registry](https://ithelp.ithome.com.tw/articles/10220807)
 
 [在 GCE 上架 Nginx](https://dainamlon.com/2018/11/18/nginx/)
+
+[go daddy買ssl & Nginx 安裝](http://force416.github.io/eric_profile/2016/07/21/godaddy-ssl-and-nginx-install/)
