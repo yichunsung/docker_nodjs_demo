@@ -4,6 +4,10 @@ FROM keymetrics/pm2:latest-alpine
 COPY . /1on1-admin-api
 WORKDIR /1on1-admin-api
 
+# update and install dependency
+RUN apk update && apk upgrade
+RUN apk add git
+RUN apk --no-cache add --virtual builds-deps build-base python
 # Install app dependencies
 ENV NPM_CONFIG_LOGLEVEL warn
 RUN npm install 
