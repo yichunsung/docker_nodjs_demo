@@ -18,6 +18,16 @@ sudo apt-get update
 sudo apt-get install docker.io
 ```
 
+3. 安裝docker-compose
+
+```bat
+sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+```
+
+```bat
+chmod +x /usr/local/bin/docker-compose
+```
+
 ## 從本機端打包一個docker images 並 push 到 Google Container Registry (GCR)
 
 1. 建立一個Docker image
